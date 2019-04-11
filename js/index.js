@@ -38,50 +38,52 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
+const logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 const ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
 const aTags = document.querySelectorAll('a');
-aTags[0].textContent = 'Services';
-aTags[1].textContent = 'Product';
-aTags[2].textContent = 'Vision';
-aTags[3].textContent = 'Features';
-aTags[4].textContent = 'About';
-aTags[5].textContent = 'Contact';
+aTags.forEach((link, i) => link.textContent = siteContent['nav'][`nav-item-${i+1}`])
+
+// const aTags = document.querySelectorAll('a');
+// aTags[0].textContent = siteContent['nav']['nav-item-1'];
+// aTags[1].textContent = siteContent['nav']['nav-item-2'];
+// aTags[2].textContent = siteContent['nav']['nav-item-3'];
+// aTags[3].textContent = siteContent['nav']['nav-item-4'];
+// aTags[4].textContent = siteContent['nav']['nav-item-5'];
+// aTags[5].textContent = siteContent['nav']['nav-item-6'];
 
 const headerOne = document.querySelector('h1');
-headerOne.textContent = 'Dom Is Awesome';
-
+headerOne.textContent = siteContent["cta"]["h1"];
 
 const btn = document.querySelector('button');
-btn.textContent = 'Get Started';
+btn.textContent = siteContent["cta"]["button"];
 
 const hFourTags = document.querySelectorAll('h4');
-hFourTags[0].textContent = 'Features';
-hFourTags[1].textContent = 'About';
-hFourTags[2].textContent = 'Services';
-hFourTags[3].textContent = 'Product';
-hFourTags[4].textContent = 'Vision';
-hFourTags[5].textContent = 'Contact';
+hFourTags[0].textContent = siteContent["main-content"]["features-h4"];
+hFourTags[1].textContent = siteContent["main-content"]["about-h4"];
+hFourTags[2].textContent = siteContent["main-content"]["services-h4"];
+hFourTags[3].textContent = siteContent["main-content"]["product-h4"];
+hFourTags[4].textContent = siteContent["main-content"]["vision-h4"];
+hFourTags[5].textContent = siteContent["contact"]["contact-h4"];
 
 const pTags = document.querySelectorAll('p');
-pTags[0].textContent = 'Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.';
-pTags[1].textContent = 'About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.';
-pTags[2].textContent = 'Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.';
-pTags[3].textContent = 'Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.';
-pTags[4].textContent = 'Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.';
-pTags[5].textContent = '123 Way 456 Street Somewhere, USA';
-pTags[6].textContent = '1 (888) 888-8888';
-pTags[7].textContent = 'sales@greatidea.io';
+pTags[0].textContent = siteContent["main-content"]["features-content"];
+pTags[1].textContent = siteContent["main-content"]["about-content"];
+pTags[2].textContent = siteContent["main-content"]["services-content"];
+pTags[3].textContent = siteContent["main-content"]["product-content"];
+pTags[4].textContent = siteContent["main-content"]["vision-content"];
+pTags[5].textContent = siteContent["contact"]["address"];
+pTags[6].textContent = siteContent["contact"]["phone"];
+pTags[7].textContent = siteContent["contact"]["email"];
 
 const middleImg = document.getElementById("middle-img");
-middleImg.src = "img/mid-page-accent.jpg";
+middleImg.setAttribute('src', siteContent['main-content']['middle-img-src'])
 
 const footer = document.querySelector('footer');
-footer.textContent = 'Copyright Great Idea! 2018';
+footer.textContent = siteContent['footer']['copyright'];
 
 const navText = document.querySelectorAll('a');
 navText.forEach(function(element) {
@@ -94,4 +96,8 @@ newParagraph.textContent = " Lorem ipsum dolor sit amet, consectetur adipisicing
 
 const bottomContent = document.querySelector('.bottom-content')
 bottomContent.appendChild(newParagraph);
+
+
+
+
 
